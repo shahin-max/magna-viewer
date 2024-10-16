@@ -1,38 +1,144 @@
-.App {
-  text-align: center;
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Body Styling */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f2f5;
+  color: #333;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  height: 100vh;
+}
+
+/* Manga Viewer Container */
+.MangaViewer {
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 20px;
+}
+
+/* Book List Styling */
+.BookList {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.BookList button {
+  background-color: rgb(162, 153, 153);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.BookList button:hover {
+  background-color: rgb(10, 63, 87);
+  transform: scale(1.05);
+}
+
+.BookList .active {
+  background-color: rgb(10, 63, 87);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.BookList button.active:hover {
+  background-color: rgb(10, 63, 87);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Chapter List Styling */
+.ChapterList {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.ChapterList button {
+  background-color: #007BFF;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.ChapterList button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.ChapterList .active {
+  background-color: rgb(10, 63, 87);
+  color: white;
+}
+
+.ChapterList button.active:hover {
+  background-color: rgb(10, 63, 87);
+}
+
+/* Page Viewer Styling */
+.PageViewer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+/* Manga Page Image */
+.PageViewer img {
+  width: 100%;
+  max-width: 1000px;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.PageViewer img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.PageViewer:hover::before,
+.PageViewer:hover::after {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+/* Hover effect for buttons and chapters */
+button:hover {
+  transform: scale(1.05);
+}
+
+.page-count {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 18px; 
+  color: #333; 
+  font-weight: bold; 
 }
